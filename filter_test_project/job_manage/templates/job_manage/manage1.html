@@ -1,0 +1,96 @@
+{%  extends 'job_manage/main.html' %}
+
+{% block content %}
+
+	<br>
+
+<br>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+
+			<form method="get">
+				{{myFilter.form}}
+
+		    <button class="btn btn-primary" type="submit">Search</button>
+		  </form>
+
+		</div>
+	</div>
+	
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md">
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+				v<th>scheduled date</th>
+                <th>shift-1 start time</th>
+                <th> shift-1 end time </th>
+                <th> shift-2 start time </th>
+                <th> shift-2 end time </th>
+                <th>shift-3 start time</th>
+                <th> shift-3 end time </th>
+                <th>shift-4 start time</th>
+                <th> shift-4 end time </th>
+                <th>shift-5 start time</th>
+                <th> shift-5 end time </th>
+                <th>shift-6 start time</th>
+                <th> shift-6 end time </th>
+                <th>shift-7 start time</th>
+                <th> shift-7 end time </th>
+                <th>shift-8 start time</th>
+                <th> shift-8 end time </th>
+                <th>shift-9 start time</th>
+                <th> shift-9 end time </th>
+                <th>shift-10 start time</th>
+                <th> shift-10 end time </th>
+				</tr>
+
+                {% for employee in allocation%}
+
+				<tr>
+					<td> {{employee.scheduled_date}} </td>
+            <td> {{employee.shift_1_start_time}} </td>
+            <td> {{employee.shift_1_end_time}} </td>
+            <td> {{employee.shift_1_job}} </td>
+            <td> {{employee.shift_2_start_time}} </td>
+            <td> {{employee.shift_2_end_time}} </td>
+            <td> {{employee.shift_2_job}} </td>
+            <td> {{employee.shift_3_start_time}} </td>
+            <td> {{employee.shift_3_end_time}} </td>
+            <td> {{employee.shift_3_job}} </td>
+            <td> {{employee.shift_4_start_time}} </td>
+            <td> {{employee.shift_4_end_time}} </td>
+            <td> {{employee.shift_4_job}} </td>
+            <td> {{employee.shift_5_start_time}} </td>
+            <td> {{employee.shift_5_end_time}} </td>
+            <td> {{employee.shift_5_job}} </td>
+            <td> {{employee.shift_6_start_time}} </td>
+            <td> {{employee.shift_6_end_time}} </td>
+            <td> {{employee.shift_6_job}} </td>
+            <td> {{employee.shift_7_start_time}} </td>
+            <td> {{employee.shift_7_end_time}} </td>
+            <td> {{employee.shift_7_job}} </td>
+            <td> {{employee.shift_8_start_time}} </td>
+            <td> {{employee.shift_8_end_time}} </td>
+            <td> {{employee.shift_8_job}} </td>
+            <td> {{employee.shift_9_start_time}} </td>
+            <td> {{employee.shift_9_end_time}} </td>
+            <td> {{employee.shift_9_job}} </td>
+            <td> {{employee.shift_10_start_time}} </td>
+            <td> {{employee.shift_10_end_time}} </td>
+            <td> {{employee.shift_10_job}} </td>
+            <td><a class="btn btn-sm btn-info" href="{% url 'updateJoballocation' employee.id %}">Update</a></td>
+            <td><a class="btn btn-sm btn-danger" href="">Delete</a></td>           
+				</tr>
+				{% endfor %}
+
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
